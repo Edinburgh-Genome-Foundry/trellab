@@ -80,15 +80,10 @@ class TrellabOrganizationClient(trello.TrelloClient):
         )
 
     def add_ordered_parts_to_board(
-        part_names, board_name, ordered_list_name="DNA_PARTS_ORDERED"
+        self, part_names, board_name, ordered_list_name="DNA_PARTS_ORDERED"
     ):
-        board = client.boards_dict()[board_name]
+        board = self.boards_dict()[board_name]
         board_list = board.lists_dict()[ordered_list_name]
-        for part_name in parts_names:
+        for part_name in part_names:
             board_list.add_card(part_name)
-
-
-with open("./secrets.yml", "r") as f:
-    config = next(yaml.load_all(f.read()))
-client = TrellabOrganizationClient(**config["trello"])
 
