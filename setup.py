@@ -15,5 +15,5 @@ setup(
     license='MIT',
     keywords="Trello DNA assembly biofoundry",
     packages=find_packages(exclude='docs'),
-    install_requires=['trello', 'yaml', 'python-box', 'fuzzywuzzy']
+    install_requires=['trello', 'pyyaml', 'python-box', 'fuzzywuzzy']
 )
